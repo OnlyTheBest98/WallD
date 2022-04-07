@@ -9,6 +9,7 @@ import http.server
 import socketserver
 
 ALLOWED_FORMATS = ["png", "jpg", "jpeg"]
+IGNORED_CHANNEL = ["arrivals"]
 
 intents = discord.Intents().default()
 client = commands.Bot(command_prefix="??", intents=intents)
