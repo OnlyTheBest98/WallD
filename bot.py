@@ -75,6 +75,9 @@ async def on_message(message: discord.Message):
     guild_id = message.guild.id  # type: ignore
     if settings.SERVER_ID and settings.SERVER_ID != guild_id:
         return
+    if message.channel.name in IGNORED_CHANNEL:
+        print("ignoring message in channel", message.channel.name)
+        return
     for at in message.attachments:
         if at.filename.split(".")[-1] in ALLOWED_FORMATS:
             last_image = Image(at.url, message.channel.name)
