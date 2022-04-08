@@ -43,6 +43,12 @@ class HTTPImageRequestHandler(http.server.BaseHTTPRequestHandler):
         if not last_image:
             self.send_error(404, "no last image found!", "Bot needs to see a new image!")
             return
+        print("received headers: ", self.headers)
+        for k, v in self.headers.items():
+            if k == "limits":
+                if last_image.channel in v.split(","):
+                    self.send_error(404, "last image was in your limit")
+                    return
         self.send_response(200, "OK")
         self.send_header("Content-type", "application/json; charset=utf-8")
         self.end_headers()
