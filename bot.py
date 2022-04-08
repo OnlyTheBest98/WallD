@@ -13,6 +13,7 @@ IGNORED_CHANNEL = ["arrivals"]
 
 intents = discord.Intents().default()
 client = commands.Bot(command_prefix="??", intents=intents)
+# TODO: more than 1 last image for people with limits set so they won't get 404
 last_image = None
 
 
