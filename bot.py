@@ -43,7 +43,7 @@ class HTTPImageRequestHandler(http.server.BaseHTTPRequestHandler):
         if not last_image:
             self.send_error(404, "no last image found!", "Bot needs to see a new image!")
             return
-        print("received headers: ", self.headers)
+        # print("received headers: ", self.headers)
         for k, v in self.headers.items():
             if k == "limits":
                 if last_image.channel in v.split(","):
@@ -78,7 +78,7 @@ async def on_message(message: discord.Message):
     for at in message.attachments:
         if at.filename.split(".")[-1] in ALLOWED_FORMATS:
             last_image = Image(at.url, message.channel.name)
-    print("last image:", last_image)
+            print("new image:", last_image)
 
 
 if __name__ == "__main__":
