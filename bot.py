@@ -105,6 +105,10 @@ class HTTPImageRequestHandler(http.server.BaseHTTPRequestHandler):
                     for text_channel in text_channels:
                         if channel_name == text_channel.name:
                             excluded_channels.add(text_channel.id)
+            elif k == "User-Agent":
+                # TODO: Old Version compatiblity: will be removed in the future
+                if "v0.0.1" in v:
+                    excluded_channels.add(961258610107756584)
 
         # search for fitting Image
         best_image: typing.Optional[Image] = None
