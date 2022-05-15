@@ -94,6 +94,8 @@ class HTTPImageRequestHandler(http.server.BaseHTTPRequestHandler):
                         return
             elif k == "excluded-channels":
                 for channel_id in v.split(","):
+                    if channel_id.strip() == "":
+                        continue
                     try:
                         excluded_channels.add(int(channel_id))
                     except ValueError:
