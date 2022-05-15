@@ -34,8 +34,10 @@ class Image:
 
     def to_json(self) -> bytes:
         url = f"\"url\": \"{self.url}\""
-        channel = f"\"channel\": \"{self.channel}\""
-        result = "{\n" + channel + ",\n" + url + "\n" + "}"
+        format = f"\"format\": \"{self.image_format}\""
+        datetime = f"\"datetime\": \"{self.time}\""
+        save_as = f"\"save_as\": \"{self.time}.{self.image_format}\""
+        result = "{\n" + url + ",\n" + format + ",\n" + datetime + ",\n" + save_as + "\n" + "}"
         return result.encode("utf-8")
 
 
