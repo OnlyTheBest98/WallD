@@ -1,4 +1,3 @@
-from nis import cat
 from threading import Thread
 import settings
 import discord
