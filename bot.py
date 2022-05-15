@@ -215,13 +215,18 @@ async def on_message(message: discord.Message):
     guild_id = message.guild.id  # type: ignore
     if settings.SERVER_ID and settings.SERVER_ID != guild_id:
         return
+
+    # find image from message content
     image_urls = re.findall(URL_REGEX, message.content)
-    image_url, image_format = image_urls[0]
-    last_image = Image(image_url, image_format, datetime.now().strftime(DATETIME_FORMAT))
-    print("new image from url in message:", last_image)
-    for channel in text_channels:
-        if channel.id == message.channel.id:
-            channel.last_image = last_image
+    if len(image_urls) > 0:
+        image_url, image_format = image_urls[0]
+        last_image = Image(image_url, image_format, datetime.now().strftime(DATETIME_FORMAT))
+        print("new image from url in message:", last_image)
+        for channel in text_channels:
+            if channel.id == message.channel.id:
+                channel.last_image = last_image
+
+    # get image from attachment
     for at in message.attachments:
         image_format = at.filename.split(".")[-1]
         if image_format in ALLOWED_FORMATS:
