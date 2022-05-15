@@ -93,7 +93,7 @@ class HTTPImageRequestHandler(http.server.BaseHTTPRequestHandler):
                     except ValueError:
                         self.send_error(400, "Invalid Header", "Maybe Category was not an ID?")
                         return
-            elif k == "exclude-channel":
+            elif k == "excluded-channels":
                 for channel_id in v.split(","):
                     try:
                         excluded_channels.add(int(channel_id))
@@ -141,7 +141,7 @@ class HTTPImageRequestHandler(http.server.BaseHTTPRequestHandler):
         result = "{\n"
         for cat in categories:
             result += f"\"{cat.id}\": \"{cat.name}\",\n"
-        result += f"\"0\": \"Other\"\n"
+        result += f"\"0\": \"Channels without Category\"\n"
         result += "}"
         self.send_response(200, "OK")
         self.send_header("Content-type", "application/json; charset=utf-8")
