@@ -10,6 +10,16 @@ Discord Image Bot
 - Run WallD
 - Have fun
 
+## Troubleshooting
+Q: It says I need Premium?
+A: Please stop all running Flows thewn run the Settings flow and when finished run the main program.
+
+Q: Images won't load?
+A: Delete your old Flows and download the 2 new .flo files and import them in Automate. Maybe you were running an old version.
+A: Have you run the new Settings Flow before running WallD? The old settings won't work in the new version.
+A: Have you seleced the categories you WANT TO SEE and the channels you do NOT WANT TO SEE? Do not select all channels to be excluded!
+A: Maybe that is a new problem you can message me on Discord.
+
 ## Changelog
 
 ### Version 0.0.2
