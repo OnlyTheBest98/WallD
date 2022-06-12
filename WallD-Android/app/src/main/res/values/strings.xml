@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">WallD</string>
+    <string name="category_setting_button">Categories</string>
+    <string name="category_setting_title">select categories</string>
+    <string name="channel_setting_button">Channels</string>
+    <string name="channel_setting_title">select channels to exclude</string>
+    <string name="discord_invite">https://discord.gg/T5XDqPQuYt</string>
+    <string name="activate_service">Activate Service</string>
+    <string name="change_lockscreen_button">Change Lockscreen</string>
+    <string name="save_to_storage_button">Save to Storage</string>
+</resources>
