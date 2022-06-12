@@ -22,6 +22,9 @@ You do NOT need Premium. Please stop all running Flows thewn run the Settings fl
 
 ## Changelog
 
+### Version 0.1.0 Currently in development
+- Standalone Android App
+
 ### Version 0.0.2
 - The bot server backend now keeps track of channels and categories on the server.
 - On the client side the program is split between two flows: the setting flow and the main flow.
